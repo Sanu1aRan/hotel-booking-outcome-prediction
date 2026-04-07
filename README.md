@@ -1,6 +1,5 @@
 Overview
-
-•	Hotel Chain A was losing significant revenue due to booking cancellations and no-shows. This project builds a machine learning model to predict booking outcomes and help the hotel take early action.
+Hotel Chain A was losing significant revenue due to booking cancellations and no-shows. This project builds a machine learning model to predict booking outcomes and help the hotel take early action.
 
 Problem
 
@@ -10,11 +9,10 @@ Predict one of 3 booking outcomes from historical data:
 •	No-Show — guest never arrives without notice
 
 Data
-
 Provided directly by Hotel Chain A:
 •	Training: 26,993 bookings after cleaning
 •	Validation: 2,733 bookings
-•	Test: 4,291 bookings
+•	Test: 4,318 bookings
 •	24 features including lead time, deposit type, room rate, guest history
 
 Data Cleaning
@@ -23,6 +21,8 @@ Data Cleaning
 •	Removed negative lead times and zero length stays
 •	Removed rows with missing Room Rate, Deposit Type and Visited Previously
 •	Final training set: 26,993 rows
+
+
 
 Exploratory Data Analysis
 
@@ -49,22 +49,22 @@ Approach
 
 Results
 
-•	Best model: Decision Tree (Macro F1 = 0.339)
+Best model: Decision Tree (Macro F1 = 0.348)
 
 Macro F1 used instead of accuracy — dataset is imbalanced across 3 classes.
 
-•	Logistic Regression: F1 = 0.305, Accuracy = 0.519
-•	Decision Tree: F1 = 0.339, Accuracy = 0.456 (best)
-•	Random Forest: F1 = 0.310, Accuracy = 0.537
-•	XGBoost: F1 = 0.304, Accuracy = 0.539
-•	ANN: F1 = 0.337, Accuracy = 0.503
+•	Logistic Regression: F1 = 0.302, Accuracy = 0.518
+•	Decision Tree: F1 = 0.348, Accuracy = 0.453 (best)
+•	Random Forest: F1 = 0.310, Accuracy = 0.543
+•	XGBoost: F1 = 0.305, Accuracy = 0.547
+•	ANN: F1 = 0.315, Accuracy = 0.517
 
 Key Findings
 
-•	1,556 out of 4,291 test bookings flagged as high risk (36.04%)
+•	1,594 out of 4,318 test bookings flagged as high risk (36.92%)
 •	£1,985,459 revenue lost annually from cancellations and no-shows
 •	Top features: Lead Time, Deposit Type, Ethnicity
 
 Stack
 
-•Python, scikit-learn, XGBoost	
+Python, scikit-learn, XGBoost, imbalanced-learn, pandas, numpy, matplotlib, seaborn, Google Colab
